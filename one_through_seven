@@ -1,0 +1,54 @@
+#include "mbed.h"
+DigitalOut myled1(p5); 
+DigitalOut myled2(p6); 
+DigitalOut myled3(p7);
+
+//code flashes one through seven in binary using external lights
+// main() runs in its own thread in the OS
+int main()
+{
+    while (true) {
+        //represents 0
+        myled1 = 0;
+        myled2 = 0;
+        myled3 = 0 ;
+        wait_us(1000000);
+        //represents 1
+        myled1 = 0;
+        myled2 = 0;
+        myled3 = 1;
+        wait_us(1000000);
+        //represents 2
+        myled1 = 0;
+        myled2 = 1;
+        myled3 = 0;
+        wait_us(1000000);
+        //represents 3
+        myled1 = 0;
+        myled2 = 1;
+        myled3 = 1;
+        wait_us(1000000); 
+        //represnts 4
+        myled1 = 1;
+        myled2 = 0;
+        myled3 = 0;
+        wait_us(1000000);
+        //represents 5 
+        myled1 = 1;
+        myled2 = 0;
+        myled3 = 1;
+        wait_us(1000000);
+        //represents 6 
+        myled1 = 1;
+        myled2 = 1;
+        myled3 = 0;
+        wait_us(1000000);
+        //represents 7
+        myled1 = 1;
+        myled2 = 1;
+        myled3 = 1;
+        wait_us(1000000);
+
+    }
+}
+
